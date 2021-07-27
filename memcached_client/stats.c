@@ -10,6 +10,8 @@
 #include "worker.h"
 
 pthread_mutex_t stats_lock = PTHREAD_MUTEX_INITIALIZER;
+struct timeval start_time;
+struct memcached_stats global_stats;
 
 void addSample(struct stat* stat, float value) {
   stat->s0 += 1.0;

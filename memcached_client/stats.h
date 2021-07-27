@@ -22,7 +22,7 @@
 
 struct config;
 
-struct timeval start_time;
+extern struct timeval start_time;
 
 //A single statistic
 struct stat {
@@ -57,7 +57,7 @@ struct memcached_stats {
 
 extern pthread_mutex_t stats_lock;
 //For now, all statistics are handled by this global struct
-struct memcached_stats global_stats;
+extern struct memcached_stats global_stats;
 double findQuantile(struct stat* stat, double quantile);
 void printGlobalStats();
 void checkExit(struct config* config);
